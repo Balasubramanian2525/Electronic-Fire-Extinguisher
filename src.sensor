@@ -1,0 +1,16 @@
+import serial
+import time
+
+# Connect to Arduino (adjust COM port as per your system)
+arduino = serial.Serial('COM3', 9600, timeout=1)
+time.sleep(2)
+
+print("🔥 Fire Extinguisher Monitoring Started...")
+
+while True:
+    if arduino.in_waiting > 0:
+        line = arduino.readline().decode('utf-8').rstrip()
+        print("Arduino says:", line)
+
+        if "Fire Detected" in line:
+            print("⚠️ Alert! Fire detected - Extinguisher activated")
