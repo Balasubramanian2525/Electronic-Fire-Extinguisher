@@ -1,0 +1,44 @@
+
+**README.md**
+```markdown
+# FlameShield – Electronic Fire Extinguisher 🔥🧯
+
+## 📌 Overview
+An **electronic fire extinguisher system** that senses fire and **automatically activates a gas-based suppression mechanism**.  
+This project aims to prevent large-scale fire accidents using **embedded systems + sensors** for real-time detection and response.  
+
+## 🛠️ Tech Stack
+- **Languages:** C (Embedded), Python  
+- **Microcontroller:** Arduino / ESP32  
+- **Sensors:** Flame Sensor, Temperature Sensor  
+- **Actuator:** Solenoid Valve (controls compressed gas release)  
+
+## ⚙️ Working Principle
+1. Flame and temperature sensors continuously monitor environment.  
+2. When fire is detected → microcontroller activates the extinguisher.  
+3. Solenoid valve releases compressed CO₂ / gas to suppress fire.  
+4. System runs on battery backup for reliability.  
+
+## 📂 Repository
+- `src/flameShield.ino` → Arduino code for fire detection & relay control  
+- `src/sensor_control.py` → Python-based monitoring script  
+- `docs/` → Circuit diagrams and prototype pictures  
+
+## ▶️ Usage
+1. Upload `flameShield.ino` to Arduino/ESP32.  
+2. Connect flame + temperature sensors as per `docs/circuit_diagram.png`.  
+3. Run `sensor_control.py` (optional for logging & monitoring).  
+
+## 📊 Results
+- Successfully detected fire within 2–3 seconds.  
+- Automatic extinguisher activation reduces human intervention.  
+- Reliable in lab-scale prototype tests.  
+
+## 🔮 Future Scope
+- IoT integration for remote fire alerts.  
+- Scalable design for industrial warehouses.  
+- Integration with smoke detectors.  
+
+## 👤 Author
+Balasubramanian M – SRM IST Ramapuram  
+📧 bm8675@srmist.edu.in  
