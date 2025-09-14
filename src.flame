@@ -1,0 +1,29 @@
+int flameSensor = 2;   // Flame sensor input pin
+int relayPin = 8;      // Relay to control extinguisher valve
+int buzzer = 9;        // Optional buzzer for alarm
+
+void setup() {
+  pinMode(flameSensor, INPUT);
+  pinMode(relayPin, OUTPUT);
+  pinMode(buzzer, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  int flameDetected = digitalRead(flameSensor);
+
+  if (flameDetected == LOW) { // LOW means fire detected for most sensors
+    Serial.println("🔥 Fire Detected! Activating Extinguisher...");
+    digitalWrite(relayPin, HIGH); // Activate extinguisher
+    digitalWrite(buzzer, HIGH);   // Sound alarm
+    delay(5000);                  // Keep extinguisher ON for 5 seconds
+    digitalWrite(relayPin, LOW);  // Turn OFF extinguisher
+    digitalWrite(buzzer, LOW);
+  } else {
+    Serial.println("✅ No Fire Detected");
+    digitalWrite(relayPin, LOW);
+    digitalWrite(buzzer, LOW);
+  }
+
+  delay(1000);
+}
